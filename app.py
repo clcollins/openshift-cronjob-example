@@ -54,7 +54,7 @@ def check_namespace(client, namespace):
 def get_env(var):
     """Get varible from the contianer environment."""
     try:
-        variable = os.environ(var)
+        variable = os.environ.get(var)
     except KeyError as e:
         print('No environment variable named {}'.format(e))
         sys.exit(1)
