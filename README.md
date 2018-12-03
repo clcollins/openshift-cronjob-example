@@ -20,7 +20,7 @@ This covers several pieces of the Kubernetes/OpenShift infrastructure, including
 ### Software
 
 1.  Python3
-2.  An OpenShift or MiniShift cluster with the default Source-to-Image imageStreams installed
+2.  An OpenShift or MiniShift cluster with the default Source-to-Image imageStreams installed, and an integrated image registry
 3.  [OpenShift-RestClient-Python](https://github.com/openshift/openshift-restclient-python)
 4.  [Kubernetes Python Client](https://github.com/kubernetes-client/python)
 
@@ -99,7 +99,7 @@ OpenShift and Kubernetes use RBAC, or [Role-based Access Control](https://docs.o
 For this exercise, create a `role` within the project, grant the role permissions to list pods and projects, and bind the `py-cron` serviceAccount to the role:
 
 ```
-oc create role pod-lister --verb=list --resource=pods,projects,namespaces
+oc create role pod-lister --verb=list --resource=pods,namespaces
 oc policy add-role-to-user pod-lister --role-namespace=py-cron system:serviceaccounts:py-cron:py-cron
 ```
 
