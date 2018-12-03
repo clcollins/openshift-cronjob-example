@@ -1,0 +1,25 @@
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: py-cron
+  name: py-cron
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: py-cron:1.0
+  runPolicy: Serial
+  source:
+    type: Git
+    git:
+      ref: master
+      uri: https://github.com/clcollins/openshift-cronjob-example.git
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: python:3.6
+        namespace: openshift
