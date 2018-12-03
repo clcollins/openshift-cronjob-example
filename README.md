@@ -204,6 +204,7 @@ strategy:
 The complete buildConfig for this example looks like the YAML below.  Substitute the Git repo you're using below, and create the buildConfig with the oc command: `oc create -f <path.to.buildconfig.yaml>`
 
 ```
+---
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
@@ -287,6 +288,7 @@ The only important part is `.spec.jobTemplate.spec.template.spec.containers.serv
 The complete cronJob for py-cron looks like the YAML below.  Substitue the URL of the OpenShift cluster API and create the cronJob using the oc command: `oc create -f <path.to.cronjob.yaml>`
 
 ```
+---
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
