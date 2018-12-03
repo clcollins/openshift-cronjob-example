@@ -65,7 +65,7 @@ _Note: Depending on how your cluster is setup, you may need to ask your cluster 
 
 ### Create a Git repositoy with the python script
 
-(...or, alternatively, just point to )
+Clone or fork this repo, `https://github.com/clcollins/openshift-cronjob-example.git`, or alternatively reference it directly in the code examples below.  This will serve as the repository from which the python script will be pulled and built into the final running image.
 
 
 ### Create a Service Account
@@ -184,7 +184,7 @@ spec:
     type: Git
     git:
       ref: master
-      uri: https://git@your.git.host/repo.git
+      uri: https://github.com/clcollins/openshift-cronjob-example.git
 ```
 
 **.spec.strategy**
@@ -220,7 +220,7 @@ spec:
     type: Git
     git:
       ref: master
-      uri: https://git@your.git.host/repo.git
+      uri: https://github.com/clcollins/openshift-cronjob-example.git
   strategy:
     type: Source
     sourceStrategy:
@@ -265,7 +265,7 @@ The important parts of the cronJob definition are:
 
 The concurrencyPolicy field of the cronJob spec is an optional field that specifies how to treat concurrent executions of a job that is created by this cron job.  In the case of this exercise, it will replace an existing job that may still be running if the cronJob creates a new job.
 
-*Note:* Other options are to allow concurrency - ie. multiple jobs running at once, or forbid concurrency - ie. new jobs are skipped until the running jobs completes.
+_Note:_ Other options are to allow concurrency - ie. multiple jobs running at once, or forbid concurrency - ie. new jobs are skipped until the running jobs completes.
 
 **.spec.schedule**
 
