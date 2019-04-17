@@ -14,7 +14,7 @@ This example covers several pieces of the Kubernetes/OKD infrastructure, includi
 *   Jobs and CronJobs (mostly the latter)
 *   Kubernetes DownwardAPI
 
-_Note: The Python script and example OKD YAML files for this example can be found in the GitHub repository: [https://github.com/clcollins/openshift-cronjob-example](https://github.com/clcollins/openshift-cronjob-example), and can be used as-ios with the exception of replacing the `value: https://okd.host:port` line in 'cronJob.yml' with the hostname of your OKD instance.
+_Note: The Python script and example OKD YAML files for this example can be found in the GitHub repository: [https://github.com/clcollins/openshift-cronjob-example](https://github.com/clcollins/openshift-cronjob-example), and can be used as-is with the exception of replacing the `value: https://okd.host:port` line in 'cronJob.yml' with the hostname of your OKD instance.
 
 ## Requirements
 
